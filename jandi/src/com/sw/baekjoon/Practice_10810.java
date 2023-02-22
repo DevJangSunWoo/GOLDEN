@@ -25,7 +25,7 @@ public class Practice_10810 {
 		 int numS=Integer.parseInt(testArr[0]);
 		 int numE=Integer.parseInt(testArr[1]);
 		 int numM=Integer.parseInt(testArr[2]);
-		 	for(int j=numS-1;j<numE;j++) {
+		 	for(int j=numS-1;j<numE;j++) {//point
 		 		bucket[j]=numM;
 		 	}	 
 		}
