@@ -5,8 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Practice_1546 {
-	
-		public static void main (String[] args)throws IOException {
+	public static void main (String[] args)throws IOException {
 			BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
 			
 			int firstLineNum=Integer.parseInt(br.readLine());
@@ -46,10 +45,11 @@ public class Practice_1546 {
 			}
 			
 			//새로운 평균 구하기
-			System.out.print(sum/manipulatedPoint.length);
-			
-			
+			System.out.print(sum/manipulatedPoint.length);			
 		}
+	
+	
+	
 	
 
 }
