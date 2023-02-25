@@ -3,42 +3,41 @@ package com.sw.baekjoon;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.StringTokenizer;
 
 public class Practice_8958 {
 
-	public static void main(String[] args) throws IOException,NumberFormatException{
-		// TODO Auto-generated method stub
-		// 입력 로직과 출력로직을 따호 따호  처리해도 무방하다.	
-		
-		//누적점수 , x나오면  누적점수초기화  
-		
+	public static void main(String[] args) throws IOException{		
+		//O의 개수가 점수에 영향을 준다, O가연속됬을경우 연속된 갯수가 점수가 된다.
+		//O의 연속이 끊어졌으면 초기화된다.
+		// 배열을 이용한다.
 		BufferedReader br= new BufferedReader(new InputStreamReader(System.in));
+		int testNum=Integer.parseInt(br.readLine());
 		
-			int num=Integer.parseInt(br.readLine());
-			
-		
-			
-			//point1  먼저 입력문자를 대문자로 만들기
-			//point2  누적점수를 생각하지 말고  그냥  O의 갯수 만큼 숫자 출력 
-			//point3  새로운 변수를 선언해야하나  int pointNum;    int count;  
-			
-			
-			for(int i=0;i<num;i++) {
-				
-				String str=br.readLine(); //현재 문자열 상태
-				str.toUpperCase();
-				System.out.println(str);
-				if(str.contains("O")) {
-					System.out.println(5);
-				}
-				System.out.println("일단점수 : ");
-				
-				
-				
-				
+		for(int j=0;j<testNum;j++) {
+			String  str=br.readLine();// 예제 OOXXOXXOOO	
+			String[] arr =str.trim().split(""); // 현재 상태 [O,O,X,X,O,X,X,O,O,O]
+			//System.out.println(Arrays.toString(arr));
+			int point[]=new int[arr.length];//점수를 담을 배열선언
+			int  count=0;
+			for(int i=0;i<arr.length;i++) {
+				if(arr[i].equals("O")) {
+					//System.out.println(i+"번쨰는"+"O이다");
+					count++;// 이구문을 거치면 현재 카운트는 1이다
+					point[i]=count;
+				}else if(arr[i].equals("X")) {
+					//System.out.println(i+"번쨰는"+"X이다");
+					count=0;
+				}						
 			}
-			
-			
+			//System.out.println(Arrays.toString(point));
+			int sum=0;
+			for(int i=0;i<point.length;i++) {
+				sum+=point[i];
+			}
+			System.out.println(sum);
+		}	
 		
 		
 	}
