@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 public class Practice_2742 {
 
 	public static void main(String[] args)throws IOException {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub ㅇ
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));	
 		int firstNum=Integer.parseInt(br.readLine());
 		for(int i=firstNum;i>=1;i--) {
