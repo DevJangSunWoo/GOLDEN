@@ -10,7 +10,7 @@ public class Practice_1157 {
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		String str=br.readLine().toLowerCase();
+		String str=br.readLine().toUpperCase();
 	
 		char arr[]=str.toCharArray();
 		
@@ -24,21 +24,35 @@ public class Practice_1157 {
 		}
 		
 		
+		int max=Integer.MIN_VALUE;
+		Character outPut = null; 
 		
-		int keyCount=0;
 		for(Character ch :hm.keySet()) {
-			System.out.println(ch+" "+hm.get(ch));
+			//System.out.println(ch+" "+hm.get(ch));
 //			p 1
 //			s 4
 //			i 4
 //			m 1
-			keyCount++;
 			
+			if( hm.get(ch)>max) {
+				max=hm.get(ch);
+				outPut=ch;
+			}
 		}
 		
-			//새로운 맵을 만들까
+		int count=0;
+		for(Character ch :hm.keySet()) {		
+			if( hm.get(ch)==max) {
+				count++;
+			}
+		}
 		
-		
+		if(count>1) {
+			System.out.println("?");
+		}else {
+			System.out.println( String.valueOf(outPut));
+		}
+					
 	}
 
 }
