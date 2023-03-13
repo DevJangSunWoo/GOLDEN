@@ -15,7 +15,7 @@ public class Practice_2869 {
 		int b=Integer.parseInt(st.nextToken());
 		int v=Integer.parseInt(st.nextToken());
 		  // 2 1 5
-		int tmp1 = v - a;  //3
+		int tmp1 = v - a;  //3 d
         int tmp2 = a - b;  // 1    //  하루가 지났을떄  내 실거리
 
         int day;
