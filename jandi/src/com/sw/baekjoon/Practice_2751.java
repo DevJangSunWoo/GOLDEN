@@ -12,9 +12,7 @@ public class Practice_2751 {
 		//Arrays.sort() 의 경우 dual-pivot Quicksort 알고리즘을 사용한다고 했다.
 		//물론 평균 시간복잡도가 O(nlogn) 이고 매우 빠른 알고리즘인 것은 맞다.
 		//최악의 경우 시간복잡도는 O(n2) 이라는 점을 기억해야한다.
-		//
-		
-		
+				
 		//
 		
 		BufferedReader br= new  BufferedReader(new InputStreamReader(System.in));
