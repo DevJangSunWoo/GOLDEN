@@ -27,21 +27,24 @@ public class Practice_7568 {
 
 		// System.out.println(Arrays.toString(kg));
 		// System.out.println(Arrays.toString(height));
-		int countK = 0;
-		int bruteKg=0; 
-		int bruteheight=0;
-		for (int i = 0; i < num; i++) {
-			 bruteKg = kg[i];
-			 bruteheight = height[i];
-			for (int j = 0; j < num; j++) {
-				if (bruteKg > kg[j] && bruteheight > height[j]) {
-					countK++;
-				}
-			
-			}
-			System.out.println(countK);
-			countK=0;
+		
+		//덩치 순위를 담을 배열 생성
+		int[] dungchiRank = new int[num];
+		 // 배열 i값과 배열 나머지값 비교하며 순위 설정
+        for (int i = 0; i < num; i++) {
+        	dungchiRank[i] = 1;  //   1로 초기화 한다.
+        	for (int j = 0; j < num; j++) {  //  같은 순위가 나오는 것도 고려가능
+            	// 배열의 i값보다 큰 값이 있으면 i값에 해당하는 순위 배열의 i값을 1씩 올려준다.
+        		if (kg[i] < kg[j]&&height[i] < height[j]) { //  몸무게와  키를 고려
+        			dungchiRank[i] = dungchiRank[i] + 1;
+        		}
+        	}
+        }
+        StringBuilder sb= new StringBuilder();
+		for(int i=0;i<num; i++) {
+			sb.append(dungchiRank[i]).append(" ");
 		}
+		System.out.println(sb);
 
 	}
 
